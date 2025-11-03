@@ -1,4 +1,4 @@
-import { CONTACT_DETAILS, WHATSAPP_MESSAGE } from "../constants";
+import { WHATSAPP_MESSAGE } from "../constants";
 
 export const buildWhatsAppLink = ({
   phoneNumber,
@@ -21,10 +21,4 @@ export const handleBookVisit = () => {
   if (contact) {
     contact.scrollIntoView({ behavior: "smooth", block: "start" });
   }
-
-  const whatsappUrl = buildWhatsAppLink({
-    phoneNumber: CONTACT_DETAILS.whatsappNumber
-  });
-
-  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 };
