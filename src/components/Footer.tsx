@@ -38,26 +38,6 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="space-y-1 text-center text-sm text-slate-400 md:text-left">
-              {CONTACT_DETAILS.locations.map((location) => (
-                <p key={location.address}>{location.address}</p>
-              ))}
-              <p>P.IVA 04102040120</p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-3 md:justify-start">
-              <a
-                href={`tel:${CONTACT_DETAILS.phone.replace(/\s+/g, "")}`}
-                className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
-              >
-                {CONTACT_DETAILS.phone}
-              </a>
-              <a
-                href={`mailto:${CONTACT_DETAILS.email}`}
-                className="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
-              >
-                {CONTACT_DETAILS.email}
-              </a>
-            </div>
           </div>
           <div className="grid gap-6 text-center sm:grid-cols-2 sm:text-left">
             <div>

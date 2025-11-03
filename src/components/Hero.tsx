@@ -58,24 +58,6 @@ const Hero = () => {
               Chi sono
             </button>
           </div>
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-            <div className="flex items-center gap-3 text-sm text-slate-600">
-              <MessageCircle className="h-5 w-5 text-brand-primary" />
-              <span className="font-medium">
-                Risposta rapida via WhatsApp o telefono
-              </span>
-            </div>
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary transition hover:text-brand-primary/80"
-              aria-label="Scrivi su WhatsApp"
-            >
-              Scrivi su WhatsApp
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </a>
-          </div>
         </div>
         <div className="relative flex-1">
           <div className="absolute inset-0 -translate-x-6 scale-105 rounded-[3rem] bg-brand-primary/10 blur-3xl" />

@@ -73,22 +73,6 @@ const Contact = () => {
             />
           </div>
           <div className="flex flex-wrap justify-center gap-3 lg:justify-start max-w-xl mx-auto lg:mx-0">
-            <a
-              href={`tel:${CONTACT_DETAILS.phone.replace(/\s+/g, "")}`}
-              className="inline-flex items-center gap-2 rounded-full border border-brand-primary/20 bg-white px-5 py-2 text-sm font-semibold text-brand-primary shadow-soft transition hover:-translate-y-0.5 hover:border-brand-primary"
-            >
-              <PhoneCall className="h-4 w-4" aria-hidden="true" />
-              Chiama
-            </a>
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-brand-primary px-5 py-2 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-primary/90"
-            >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              Scrivi su WhatsApp
-            </a>
             {CONTACT_DETAILS.locations.map((location) => (
               <a
                 key={location.address}
