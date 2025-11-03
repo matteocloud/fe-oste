@@ -1,7 +1,25 @@
+import { useEffect } from "react";
 import LogoCB from "./LogoCB";
 import { CONTACT_DETAILS } from "../constants";
 
 const Footer = () => {
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const existingScript = document.getElementById("iubenda-script");
+    if (existingScript) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://cdn.iubenda.com/iubenda.js";
+    script.id = "iubenda-script";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <footer className="bg-slate-900 text-slate-200" aria-labelledby="footer-title">
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-10">
@@ -69,10 +87,18 @@ const Footer = () => {
         <div className="mt-12 flex flex-col justify-between gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row">
           <p>© {new Date().getFullYear()} Osteopata Chiara Benini · Tutti i diritti riservati.</p>
           <div className="flex flex-wrap gap-4">
-            <a className="transition hover:text-white" href="#">
+            <a
+              href="https://www.iubenda.com/privacy-policy/93759785"
+              className="transition hover:text-white iubenda-white iubenda-noiframe iubenda-embed"
+              title="Privacy Policy"
+            >
               Privacy Policy
             </a>
-            <a className="transition hover:text-white" href="#">
+            <a
+              href="https://www.iubenda.com/privacy-policy/93759785/cookie-policy"
+              className="transition hover:text-white iubenda-white iubenda-noiframe iubenda-embed"
+              title="Cookie Policy"
+            >
               Cookie Policy
             </a>
             <a className="transition hover:text-white" href="#contact">
