@@ -22,7 +22,7 @@ const About = () => {
           <div className="absolute inset-0 -left-6 -top-6 rounded-3xl bg-brand-primary/10" />
           <div className="relative overflow-hidden rounded-3xl border border-brand-primary/20 bg-white shadow-soft">
             <img
-              src={getAssetUrl("images/doctor-paceholder-v3.jpg")}
+              src={getAssetUrl("images/doctor-paceholder-v4.jpg")}
               alt="Ritratto professionale di Chiara Benini, osteopata"
               className="h-full w-full object-cover object-center"
             />
