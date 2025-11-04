@@ -32,10 +32,16 @@ const Header = () => {
   }, [isMobileNavOpen]);
 
   const handleNavClick = (href: string) => {
-    const element = document.querySelector<HTMLElement>(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    const target = document.querySelector<HTMLElement>(href);
+    if (!target) {
+      setIsMobileNavOpen(false);
+      return;
     }
+
+    const headerElement = document.querySelector<HTMLElement>("header");
+    const headerHeight = headerElement?.offsetHeight ?? 0;
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+    window.scrollTo({ top: Math.max(targetPosition, 0), behavior: "smooth" });
     setIsMobileNavOpen(false);
   };
 

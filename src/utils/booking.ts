@@ -1,3 +1,4 @@
+
 import { WHATSAPP_MESSAGE } from "../constants";
 
 export const buildWhatsAppLink = ({
@@ -19,6 +20,9 @@ export const handleBookVisit = () => {
 
   const contact = document.getElementById("contact");
   if (contact) {
-    contact.scrollIntoView({ behavior: "smooth", block: "start" });
+    const headerElement = document.querySelector<HTMLElement>("header");
+    const headerHeight = headerElement?.offsetHeight ?? 0;
+    const targetPosition = contact.getBoundingClientRect().top + window.scrollY - headerHeight;
+    window.scrollTo({ top: Math.max(targetPosition, 0), behavior: "smooth" });
   }
 };
