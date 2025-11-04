@@ -115,18 +115,25 @@ const Header = () => {
       {isMobileNavOpen ? (
         <div className="md:hidden">
           <nav
-            className="space-y-4 border-t border-outline bg-surface px-6 py-6 text-base font-medium text-slate-700"
+            className="space-y-4 border-t border-outline bg-surface px-6 py-6 text-base font-medium text-slate-700 text-center"
             aria-label="Navigazione mobile"
           >
-            {NAV_LINKS.map((link) => (
-              <button
+            {NAV_LINKS.map((link, index) => (
+              <div
                 key={link.href}
-                type="button"
-                onClick={() => handleNavClick(link.href)}
-                className="block w-full text-left transition-colors hover:text-brand-primary"
+                className={cn(
+                  "pb-4",
+                  index < NAV_LINKS.length - 1 ? "border-b border-outline/60" : "border-none pb-0"
+                )}
               >
-                {link.label}
-              </button>
+                <button
+                  type="button"
+                  onClick={() => handleNavClick(link.href)}
+                  className="inline-flex w-full justify-center py-2 transition-colors hover:text-brand-primary"
+                >
+                  {link.label}
+                </button>
+              </div>
             ))}
             <a
               className="block w-full rounded-full border border-brand-primary px-4 py-2 text-center font-semibold text-brand-primary transition hover:bg-brand-primary/10"
