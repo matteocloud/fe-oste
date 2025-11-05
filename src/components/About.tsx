@@ -14,7 +14,7 @@ const About = () => {
     <Section
       id="about"
       eyebrow="Chi sono"
-      title="Osteopata Chiara Benini"
+      title="Osteopata"
       description="Mi chiamo Chiara Benini e accompagno le persone in un percorso di benessere quotidiano. Ascolto, empatia e tecnica osteopatica si uniscono per creare trattamenti su misura che rispettano i tempi e le esigenze di ogni paziente."
     >
       <div className="grid gap-12 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-center">
