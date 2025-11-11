@@ -39,7 +39,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="grid gap-6 text-center sm:grid-cols-2 sm:text-left">
+          <div className="grid gap-6 text-center lg:grid-cols-2">
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-white">
                 Naviga
