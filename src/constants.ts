@@ -6,8 +6,8 @@ export const CONTACT_DETAILS: ContactInfo = {
   whatsappNumber: "+39 351 552 5149",
   locations: [
     {
-      label: "Studio Varese · Via Leonardo Da Vinci, 3",
-      shortLabel: "Apri studio Varese",
+      label: "Studio Curas",
+      shortLabel: "Apri studio Curas",
       address: "Via Leonardo Da Vinci, 3, 21100 Varese (VA)",
       mapsUrl:
         "https://maps.google.com/?q=Via%20Leonardo%20Da%20Vinci%2C%203%2C%2021100%20Varese%20VA",
@@ -15,8 +15,8 @@ export const CONTACT_DETAILS: ContactInfo = {
         "https://maps.google.com/maps?q=Via%20Leonardo%20Da%20Vinci%2C%203%2C%2021100%20Varese%20VA&output=embed"
     },
     {
-      label: "Studio Calcinate del Pesce",
-      shortLabel: "Apri studio Calcinate",
+      label: "Studio Synergy Fisio",
+      shortLabel: "Apri studio Synergy Fisio",
       address: "Via Vespucci, 19, Calcinate del Pesce, 21100 Varese (VA)",
       mapsUrl:
         "https://maps.google.com/?q=Via%20Vespucci%2C%2019%2C%20Calcinate%20del%20Pesce%2C%2021100%20Varese%20VA",

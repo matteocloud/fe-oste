@@ -22,11 +22,13 @@ const Contact = () => {
       eyebrow="Prenota una visita"
       title="Contattami per informazioni o per fissare il tuo prossimo appuntamento"
       description={(
-        <>
-          Ricevo a Varese in Via Leonardo Da Vinci, 3 e a Calcinate del Pesce in Via Vespucci, 19.
-          <br />
-          Puoi contattarmi telefonicamente, via WhatsApp oppure via email: ti risponderò appena possibile.
-        </>
+        <div className="space-y-3">
+          <p>Ricevo a Varese:</p>
+          <ul className="list-disc space-y-1 pl-5">
+            <li>Studio Curas, Via Leonardo Da Vinci 3, Giubiano</li>
+            <li>Studio Synergy Fisio, Via Vespucci 19, Calcinate del Pesce</li>
+          </ul>
+        </div>
       )}
     >
       <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-stretch">
