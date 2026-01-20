@@ -27,13 +27,14 @@ const Contact = () => {
           <ul className="list-disc space-y-1 pl-5">
             <li>Studio Curas, Via Leonardo Da Vinci 3, Giubiano</li>
             <li>Studio Synergy Fisio, Via Vespucci 19, Calcinate del Pesce</li>
+            <li>Panorama Salute, Via Belmonte 169, Varese</li>
           </ul>
         </div>
       )}
     >
       <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-stretch">
         <div className="space-y-8 text-center lg:text-left lg:pr-10 lg:flex lg:h-full lg:flex-col lg:gap-10 lg:space-y-0">
-          <div className="grid gap-6 text-sm text-slate-700 max-w-xl mx-auto lg:mx-0 w-full lg:flex-1 lg:gap-8">
+          <div className="grid gap-2 text-sm text-slate-700 max-w-xl mx-auto lg:mx-0 w-full lg:flex-1 lg:gap-3">
             <ContactField
               icon={PhoneCall}
               label="Telefono"
@@ -91,7 +92,7 @@ const Contact = () => {
                 title={`Indicazioni per ${location.label}`}
                 src={location.embedUrl}
                 loading="lazy"
-                className="h-64 w-full border-0"
+                className="h-40 w-full border-0"
                 allowFullScreen
               />
               <div className="space-y-1 border-t border-brand-primary/10 p-4 text-sm text-slate-600">

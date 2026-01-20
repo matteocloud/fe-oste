@@ -22,6 +22,15 @@ export const CONTACT_DETAILS: ContactInfo = {
         "https://maps.google.com/?q=Via%20Vespucci%2C%2019%2C%20Calcinate%20del%20Pesce%2C%2021100%20Varese%20VA",
       embedUrl:
         "https://maps.google.com/maps?q=Via%20Vespucci%2C%2019%2C%20Calcinate%20del%20Pesce%2C%2021100%20Varese%20VA&output=embed"
+    },
+    {
+      label: "Panorama Salute",
+      shortLabel: "Apri Panorama Salute",
+      address: "Via Belmonte, 169, 21100 Varese (VA)",
+      mapsUrl:
+        "https://maps.google.com/?q=Via%20Belmonte%2C%20169%2C%2021100%20Varese%20VA",
+      embedUrl:
+        "https://maps.google.com/maps?q=Via%20Belmonte%2C%20169%2C%2021100%20Varese%20VA&output=embed"
     }
   ],
   hours: [
