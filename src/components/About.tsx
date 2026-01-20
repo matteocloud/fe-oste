@@ -10,6 +10,7 @@ Ho frequentato il corso quinquennale di Osteopatia conseguendo il Bachelor in Os
 Durante questo percorso ho svolto più di 1000 ore di tirocinio clinico con pazienti dall’età neonatale all’età adulta. Ho avuto la possibilità di supportare, grazie ai trattamenti, gli atleti di nuoto durante il “trofeo Master Rari Nantes - Saronno”.
 Inoltre ho eseguito un corso di formazione breve riguardante la “Clinica gnatologica e osteopatia”.
 Da febbraio 2025 ho intrapreso una specializzazione nell’ambito neonatale-pediatrico.
+Da ottobre 2025 ho intrapreso una ulteriore specializzazione in craniodonzia.
 In aggiunta ho intrapreso il ruolo di assistente e tutor in formazione presso l’Accademia Italiana di Medicina Osteopatica (AIMO) supportando gli studenti durante le lezioni e la loro pratica clinica.
 Parallelamente sono un’insegnante di nuoto e nuoto sincronizzato, questo mi permette di apprezzare anche la combinazione tra lo sport e l’osteopatia.
 

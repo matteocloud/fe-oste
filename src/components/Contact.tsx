@@ -25,9 +25,9 @@ const Contact = () => {
         <div className="space-y-3">
           <p>Ricevo a Varese:</p>
           <ul className="list-disc space-y-1 pl-5">
+            <li>Panorama Salute, Via Belmonte 169, Varese</li>
             <li>Studio Curas, Via Leonardo Da Vinci 3, Giubiano</li>
             <li>Studio Synergy Fisio, Via Vespucci 19, Calcinate del Pesce</li>
-            <li>Panorama Salute, Via Belmonte 169, Varese</li>
           </ul>
         </div>
       )}
