@@ -2,6 +2,9 @@
 import { Font } from "astro:assets";
 import "../styles/global.css";
 import { SITE } from "../data/site";
+import { buildJsonLd } from "../lib/jsonld";
+
+const jsonLd = JSON.stringify(buildJsonLd());
 ---
 
 <!doctype html>
@@ -31,6 +34,7 @@ import { SITE } from "../data/site";
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <Font cssVariable="--font-cormorant" preload={[{ weight: "600", style: "normal" }]} />
     <Font cssVariable="--font-figtree" preload={[{ weight: "400" }]} />
+    <script is:inline type="application/ld+json" set:html={jsonLd} />
     <script
       is:inline
       src="https://embeds.iubenda.com/widgets/9aa397b6-9715-436e-8dad-43316562ee44.js"></script>
