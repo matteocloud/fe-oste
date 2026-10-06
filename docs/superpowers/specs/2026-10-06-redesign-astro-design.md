@@ -49,20 +49,19 @@ Ancore in italiano: `#trattamenti`, `#chi-sono`, `#faq`, `#contatti`.
 ## Stile
 
 - Logo CB invariato (convertito in formato leggero).
-- Colori: **petrolio del logo** (valore campionato dal file) come colore primario per titoli e pulsanti; verde salvia attuale (`#abc19f` / `#6E7457`) per sfondi e dettagli; sfondo bianco caldo; testo scuro. Contrasto testo/pulsanti conforme WCAG AA.
+- Colori: **petrolio del logo** (`#275360`, campionato dal file) come colore primario per titoli e pulsanti; verde salvia attuale (`#abc19f` / `#6E7457`) per sfondi e dettagli; sfondo bianco caldo; testo scuro. Contrasto testo/pulsanti conforme WCAG AA.
 - Caratteri self-hosted (Fontsource, nessuna richiesta a Google Fonts): **Cormorant Garamond** per i titoli, **Figtree** per il testo.
 - Molto spazio bianco, angoli morbidi, animazioni leggere che rispettano `prefers-reduced-motion`.
 - Mobile-first; nessuno scroll orizzontale.
 
 ## Tecnica
 
-- **Astro 7** (richiede Node ≥ 22.12) con **Tailwind CSS 4** tramite `@tailwindcss/vite`; integrazione `@astrojs/sitemap`.
+- **Astro 7** (richiede Node ≥ 22.12) con **Tailwind CSS 4** tramite `@tailwindcss/vite`; icone da `@lucide/astro` (SVG generati in build).
 - Componenti `.astro` in `src/components/`, dati (contatti, sedi, orari, servizi, FAQ) in `src/data/site.ts`: unico punto da modificare per i contenuti.
 - Immagini in `src/assets/` servite con `<Picture>` di Astro (AVIF/WebP, `srcset`); foto hero con caricamento prioritario, le altre lazy.
-- Icone: SVG inline (nessuna libreria runtime).
-- `public/`: CNAME, robots.txt, favicon, immagine di anteprima social 1200×630 (`og-image.jpg`).
+- `public/`: CNAME, robots.txt, sitemap.xml, favicon, `apple-touch-icon.png`, immagine di anteprima social 1200×630 (`og-image.jpg`).
 - Rimossi: React, lucide-react, Vite config, PostCSS/Tailwind 3 config, `src/lib/` (palette dinamica), `index.html` e componenti React.
-- Workflow GitHub Actions: Node 22, `npm ci`, `npm run build`, pubblicazione di `dist/` invariata.
+- Workflow GitHub Actions: Node 22, `npm ci`, `npm test` (build + verifiche), pubblicazione di `dist/` invariata.
 
 ## SEO
 
@@ -70,13 +69,13 @@ Ancore in italiano: `#trattamenti`, `#chi-sono`, `#faq`, `#contatti`.
 - Meta description con nome, professione, Varese e le due sedi; canonical; Open Graph / Twitter con `og-image.jpg`.
 - Un solo H1 (nome + città); H2 per le sezioni con parole chiave naturali.
 - JSON-LD in `@graph`: `Person` (Chiara Benini, jobTitle "Osteopata", alumniOf AIMO, `worksFor` le due sedi) e due `MedicalBusiness` (una per sede: nome, indirizzo, telefono, url, immagine). Nessun campo vuoto: `sameAs` aggiunto solo quando esisterà la scheda Google Business Profile.
-- Sitemap generata in build; robots.txt punta a `sitemap-index.xml`.
+- Sitemap statica esistente (`public/sitemap.xml`, già nota a Search Console) mantenuta con `lastmod` aggiornato; robots.txt invariato.
 - `alt` descrittivi su tutte le immagini.
 
 ## Fuori dal sito (checklist per l'utente, nessun codice)
 
 - Creare la scheda Google Business Profile (dall'account Google di Chiara).
-- In Search Console: inviare la nuova sitemap e richiedere l'indicizzazione della home.
+- In Search Console: richiedere l'indicizzazione della home (la sitemap resta la stessa).
 - Profilo MioDottore (o simili) con link al sito.
 - Chiedere a Panorama Salute, Synergy Fisio e AIMO un link al sito.
 
