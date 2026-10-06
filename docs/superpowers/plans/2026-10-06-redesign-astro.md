@@ -17,7 +17,7 @@ Spec: `docs/superpowers/specs/2026-10-06-redesign-astro-design.md`
 - Sedi attive: solo Panorama Salute (Via Belmonte, 169) e Studio Synergy Fisio (Via Vespucci, 19, Calcinate del Pesce). Nessun riferimento a Curas / Via Leonardo Da Vinci.
 - `<title>` esatto: `Chiara Benini | Osteopata a Varese`. Un solo H1, testo esatto: `Chiara Benini, Osteopata a Varese`.
 - Dominio `https://chiarabeniniosteopata.it/`; `public/CNAME` invariato.
-- Colori: petrolio `#275360`, salvia `#abc19f`, salvia scuro `#6E7457`, sfondo `#fbfaf7`, testo `#1f2a37`.
+- Colori: petrolio `#275360`, salvia `#abc19f`, salvia scuro `#636A4E` (contrasto AA), sfondo `#fbfaf7`, testo `#1f2a37`.
 - Font: Cormorant Garamond (titoli), Figtree (testo), via Astro Fonts API; nessuna richiesta a Google Fonts.
 - Nessuna mappa incorporata (`<iframe>`).
 - Iubenda: widget `https://embeds.iubenda.com/widgets/9aa397b6-9715-436e-8dad-43316562ee44.js` in `<head>`, `https://cdn.iubenda.com/iubenda.js` nel footer, link policy `https://www.iubenda.com/privacy-policy/93759785` e `/cookie-policy`.
@@ -465,7 +465,7 @@ export const whatsappHref = (phone: string = CONTACT.phone, message: string = CO
   --color-petrol-dark: #1c3e48;
   --color-petrol-soft: #e7eff1;
   --color-sage: #abc19f;
-  --color-sage-deep: #6e7457;
+  --color-sage-deep: #636a4e;
   --color-sage-soft: #f1f4ec;
   --color-cream: #fbfaf7;
   --color-ink: #1f2a37;
@@ -794,8 +794,8 @@ import { NAV_LINKS } from "../data/site";
 
 <header class="sticky top-0 z-40 border-b border-line bg-cream/90 backdrop-blur-md">
   <div class="container-page flex h-18 items-center justify-between gap-4">
-    <a href="#inizio" class="flex items-center gap-3" aria-label="Chiara Benini, osteopata: torna all'inizio">
-      <Image src={logo} alt="" width={48} height={48} loading="eager" class="h-12 w-12" />
+    <a href="#inizio" class="flex items-center gap-3">
+      <Image src={logo} alt="" width={96} height={96} loading="eager" class="h-12 w-12" />
       <span class="leading-tight">
         <span class="block font-heading text-xl font-semibold text-ink">Chiara Benini</span>
         <span class="block text-[0.7rem] font-semibold tracking-[0.22em] text-sage-deep uppercase">Osteopata</span>
@@ -874,7 +874,7 @@ const year = new Date().getFullYear();
     <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
       <div class="flex items-start gap-4">
         <span class="flex h-14 w-14 flex-none items-center justify-center rounded-full bg-white">
-          <Image src={logo} alt="" width={44} height={44} class="h-11 w-11" />
+          <Image src={logo} alt="" width={88} height={88} class="h-11 w-11" />
         </span>
         <div class="space-y-1">
           <p class="font-heading text-2xl font-semibold text-white">Chiara Benini</p>
@@ -1085,7 +1085,7 @@ import { telHref, whatsappHref } from "../lib/links";
     </div>
 
     <div class="relative mx-auto w-full max-w-md">
-      <div aria-hidden="true" class="absolute -inset-3 translate-x-4 translate-y-4 rounded-[2.5rem] bg-sage/40"></div>
+      <div aria-hidden="true" class="absolute -inset-2 translate-x-2 translate-y-2 rounded-[2.5rem] bg-sage/40 md:-inset-3 md:translate-x-4 md:translate-y-4"></div>
       <Picture
         src={heroPhoto}
         formats={["avif", "webp"]}
@@ -1251,7 +1251,7 @@ import { ABOUT, TRAINING } from "../data/site";
 <section id="chi-sono" aria-labelledby="chi-sono-title" class="py-20 md:py-28">
   <div class="container-page grid items-start gap-14 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
     <div class="relative mx-auto w-full max-w-sm md:sticky md:top-28">
-      <div aria-hidden="true" class="absolute -inset-3 -translate-x-4 translate-y-4 rounded-[2.5rem] bg-petrol-soft"></div>
+      <div aria-hidden="true" class="absolute -inset-2 -translate-x-2 translate-y-2 rounded-[2.5rem] bg-petrol-soft md:-inset-3 md:-translate-x-4 md:translate-y-4"></div>
       <Picture
         src={portrait}
         formats={["avif", "webp"]}
@@ -1557,7 +1557,7 @@ import { telHref, whatsappHref } from "../lib/links";
             </a>
           </li>
           <li>
-            <a href={`mailto:${CONTACT.email}`} class="flex items-center gap-3 break-all hover:underline">
+            <a href={`mailto:${CONTACT.email}`} class="flex items-center gap-3 text-sm [overflow-wrap:anywhere] hover:underline sm:text-base">
               <Mail class="h-5 w-5 flex-none" />
               {CONTACT.email}
             </a>
