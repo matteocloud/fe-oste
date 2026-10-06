@@ -1010,7 +1010,7 @@ test("le 8 aree di trattamento", () => {
 
 test("tutte le immagini hanno alt", () => {
   for (const [tag] of html.matchAll(/<img\b[^>]*>/g)) {
-    assert.match(tag, /\balt="/, tag);
+    assert.match(tag, /\salt(="|[\s>])/, tag);
   }
 });
 ```
@@ -1089,6 +1089,7 @@ import { telHref, whatsappHref } from "../lib/links";
       <Picture
         src={heroPhoto}
         formats={["avif", "webp"]}
+        width={960}
         widths={[360, 540, 720, 960]}
         sizes="(min-width: 768px) 28rem, 90vw"
         alt="Chiara Benini, osteopata a Varese, in divisa da studio"
@@ -1254,6 +1255,7 @@ import { ABOUT, TRAINING } from "../data/site";
       <Picture
         src={portrait}
         formats={["avif", "webp"]}
+        width={800}
         widths={[320, 480, 640, 800]}
         sizes="(min-width: 768px) 24rem, 85vw"
         alt="Ritratto di Chiara Benini, osteopata"
