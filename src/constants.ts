@@ -15,15 +15,6 @@ export const CONTACT_DETAILS: ContactInfo = {
         "https://maps.google.com/maps?q=Via%20Belmonte%2C%20169%2C%2021100%20Varese%20VA&output=embed"
     },
     {
-      label: "Studio Curas",
-      shortLabel: "Apri studio Curas",
-      address: "Via Leonardo Da Vinci, 3, 21100 Varese (VA)",
-      mapsUrl:
-        "https://maps.google.com/?q=Via%20Leonardo%20Da%20Vinci%2C%203%2C%2021100%20Varese%20VA",
-      embedUrl:
-        "https://maps.google.com/maps?q=Via%20Leonardo%20Da%20Vinci%2C%203%2C%2021100%20Varese%20VA&output=embed"
-    },
-    {
       label: "Studio Synergy Fisio",
       shortLabel: "Apri studio Synergy Fisio",
       address: "Via Vespucci, 19, Calcinate del Pesce, 21100 Varese (VA)",
