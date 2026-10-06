@@ -28,3 +28,23 @@ test("tutte le immagini hanno alt", () => {
     assert.match(tag, /\salt(="|[\s>])/, tag);
   }
 });
+
+test("chi sono con il percorso di formazione", () => {
+  assert.match(html, /id="chi-sono"/);
+  for (const text of [
+    "Mi chiamo Chiara Benini",
+    "Health Sciences University di Londra",
+    "1000 ore di tirocinio",
+    "neonatale-pediatrico",
+    "craniodonzia",
+    "nuoto sincronizzato"
+  ]) {
+    assert.ok(pageText.includes(text), text);
+  }
+});
+
+test("FAQ con 4 domande a fisarmonica", () => {
+  assert.match(html, /id="faq"/);
+  assert.equal([...html.matchAll(/<details\b/g)].length, 4);
+  assert.ok(pageText.includes("Serve la prescrizione medica?"));
+});
