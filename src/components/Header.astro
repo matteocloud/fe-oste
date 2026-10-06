@@ -1,28 +1,28 @@
 ---
 import { Image } from "astro:assets";
 import { Menu, X } from "@lucide/astro";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-cb.png";
 import { NAV_LINKS } from "../data/site";
 ---
 
 <header class="sticky top-0 z-40 border-b border-line bg-cream/90 backdrop-blur-md">
-  <div class="container-page flex h-18 items-center justify-between gap-4">
-    <a href="#inizio" class="flex items-center gap-3">
-      <Image src={logo} alt="" width={96} height={96} loading="eager" class="h-12 w-12" />
+  <div class="container-page flex h-20 items-center justify-between gap-4 nav:h-24">
+    <a href="#inizio" class="flex items-center gap-3 nav:gap-4">
+      <Image src={logo} alt="" width={143} height={96} loading="eager" class="h-10 w-auto nav:h-12" />
       <span class="leading-tight">
-        <span class="block font-heading text-xl font-semibold text-ink">Chiara Benini</span>
-        <span class="block text-[0.7rem] font-semibold tracking-[0.22em] text-sage-deep uppercase">Osteopata</span>
+        <span class="block font-heading text-2xl font-semibold text-ink nav:text-[1.75rem]">Chiara Benini</span>
+        <span class="block text-xs font-semibold tracking-[0.22em] text-sage-deep uppercase">Osteopata</span>
       </span>
     </a>
 
-    <nav aria-label="Navigazione principale" class="hidden items-center gap-8 text-sm font-medium text-muted md:flex">
+    <nav aria-label="Navigazione principale" class="hidden items-center gap-8 text-base font-medium text-muted nav:flex">
       {NAV_LINKS.map((link) => <a href={link.href} class="transition-colors hover:text-petrol">{link.label}</a>)}
-      <a href="#contatti" class="btn btn-primary px-5 py-2 text-sm">Prenota</a>
+      <a href="#contatti" class="btn btn-primary px-6 py-2.5">Prenota</a>
     </nav>
 
     <button
       type="button"
-      class="rounded-full border border-line p-2 text-ink md:hidden"
+      class="rounded-full border border-line p-2 text-ink nav:hidden"
       aria-controls="mobile-nav"
       aria-expanded="false"
       aria-label="Apri il menu"
@@ -33,7 +33,7 @@ import { NAV_LINKS } from "../data/site";
     </button>
   </div>
 
-  <nav id="mobile-nav" aria-label="Navigazione mobile" class="hidden border-t border-line bg-cream md:hidden" data-menu>
+  <nav id="mobile-nav" aria-label="Navigazione mobile" class="hidden border-t border-line bg-cream nav:hidden" data-menu>
     <ul class="container-page py-2 text-lg">
       {
         NAV_LINKS.map((link) => (

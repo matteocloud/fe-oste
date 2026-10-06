@@ -1,9 +1,8 @@
 ---
 import { Picture } from "astro:assets";
-import { MessageCircle, Phone } from "@lucide/astro";
+import { ArrowRight } from "@lucide/astro";
 import heroPhoto from "../assets/chiara-benini-osteopata.jpg";
-import { AUDIENCES, CONTACT, SITE } from "../data/site";
-import { telHref, whatsappHref } from "../lib/links";
+import { SITE } from "../data/site";
 ---
 
 <section id="inizio" aria-labelledby="hero-title" class="relative overflow-hidden">
@@ -19,20 +18,9 @@ import { telHref, whatsappHref } from "../lib/links";
         Chiara Benini, <span class="block text-petrol italic">Osteopata a Varese</span>
       </h1>
       <p class="max-w-xl text-lg text-muted">{SITE.tagline}</p>
-      <ul class="flex flex-wrap gap-2" aria-label="A chi mi rivolgo">
-        {
-          AUDIENCES.map((audience) => (
-            <li class="rounded-full border border-sage/60 bg-sage-soft px-4 py-1.5 text-sm font-medium text-sage-deep">
-              {audience}
-            </li>
-          ))
-        }
-      </ul>
       <div class="flex flex-col gap-3 sm:flex-row">
-        <a href={whatsappHref()} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          <MessageCircle class="h-5 w-5" /> Scrivimi su WhatsApp
-        </a>
-        <a href={telHref()} class="btn btn-outline"><Phone class="h-5 w-5" /> {CONTACT.phone}</a>
+        <a href="#contatti" class="btn btn-primary">Prenota una visita <ArrowRight class="h-5 w-5" /></a>
+        <a href="#chi-sono" class="btn btn-outline">Chi sono</a>
       </div>
     </div>
 
@@ -47,7 +35,7 @@ import { telHref, whatsappHref } from "../lib/links";
         alt="Chiara Benini, osteopata a Varese, in divisa da studio"
         loading="eager"
         fetchpriority="high"
-        class="relative aspect-[4/5] w-full rounded-[2rem] object-cover object-top shadow-soft"
+        class="relative h-auto w-full rounded-[2rem] shadow-soft"
       />
     </div>
   </div>

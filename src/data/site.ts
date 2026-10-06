@@ -50,8 +50,6 @@ export const NAV_LINKS = [
   { label: "Contatti", href: "#contatti" }
 ];
 
-export const AUDIENCES = ["Adulti", "Neonati e bambini", "Gravidanza", "Sportivi"];
-
 export const LOCATIONS: Location[] = [
   {
     id: "panorama-salute",

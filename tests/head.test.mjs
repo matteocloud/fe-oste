@@ -19,8 +19,8 @@ test("un solo h1 con nome e città", () => {
   assert.equal(textOf(h1s[0][1]), "Chiara Benini, Osteopata a Varese");
 });
 
-test("banner cookie iubenda nel head", () => {
-  assert.ok(html.includes("https://embeds.iubenda.com/widgets/9aa397b6-9715-436e-8dad-43316562ee44.js"));
+test("nessun banner cookie né script iubenda", () => {
+  assert.doesNotMatch(html, /embeds\.iubenda\.com|cdn\.iubenda\.com/);
 });
 
 test("HTML statico, non una SPA vuota", () => {

@@ -12,6 +12,7 @@
   --color-muted: #52606d;
   --color-line: rgb(31 42 55 / 0.1);
   --shadow-soft: 0 24px 48px -28px rgb(31 42 55 / 0.35);
+  --breakpoint-nav: 53.125rem;
 }
 
 @theme inline {
@@ -22,7 +23,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 6.5rem;
   }
 
   body {
@@ -65,14 +66,6 @@
 
   .btn-outline {
     @apply border border-petrol/30 text-petrol hover:border-petrol hover:bg-petrol-soft;
-  }
-}
-
-/* Su mobile il pulsante preferenze cookie di iubenda sta sopra la barra contatti fissa.
-   Specificità più alta della regola iubenda `bottom: 0 !important`, che viene caricata dopo. */
-@media (width < 48rem) {
-  .iubenda-tp-btn.iubenda-tp-btn.iubenda-tp-btn[data-tp-float][data-tp-float] {
-    bottom: 4.5rem !important;
   }
 }
 

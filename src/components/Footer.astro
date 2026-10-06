@@ -28,19 +28,12 @@ const year = new Date().getFullYear();
 
     <div class="flex flex-col gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row sm:justify-between">
       <p>© {year} Chiara Benini Osteopata · Tutti i diritti riservati.</p>
-      <div class="flex gap-5">
-        <a
-          href="https://www.iubenda.com/privacy-policy/93759785"
-          class="iubenda-white iubenda-noiframe iubenda-embed hover:text-white"
-          title="Privacy Policy">Privacy Policy</a
-        >
-        <a
-          href="https://www.iubenda.com/privacy-policy/93759785/cookie-policy"
-          class="iubenda-white iubenda-noiframe iubenda-embed hover:text-white"
-          title="Cookie Policy">Cookie Policy</a
-        >
-      </div>
+      <a
+        href="https://www.iubenda.com/privacy-policy/93759785"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline-offset-4 hover:text-white hover:underline">Privacy Policy</a
+      >
     </div>
   </div>
-  <script is:inline src="https://cdn.iubenda.com/iubenda.js" async></script>
 </footer>

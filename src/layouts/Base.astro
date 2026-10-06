@@ -35,9 +35,6 @@ const jsonLd = JSON.stringify(buildJsonLd());
     <Font cssVariable="--font-cormorant" preload={[{ weight: "600", style: "normal" }]} />
     <Font cssVariable="--font-figtree" preload={[{ weight: "400" }]} />
     <script is:inline type="application/ld+json" set:html={jsonLd} />
-    <script
-      is:inline
-      src="https://embeds.iubenda.com/widgets/9aa397b6-9715-436e-8dad-43316562ee44.js"></script>
   </head>
   <body>
     <slot />

@@ -19,10 +19,9 @@ test("menu mobile accessibile", () => {
   assert.match(html, /id="mobile-nav"/);
 });
 
-test("privacy e cookie policy iubenda nel footer", () => {
+test("solo il link alla privacy policy nel footer", () => {
   assert.ok(html.includes('href="https://www.iubenda.com/privacy-policy/93759785"'));
-  assert.ok(html.includes('href="https://www.iubenda.com/privacy-policy/93759785/cookie-policy"'));
-  assert.ok(html.includes("https://cdn.iubenda.com/iubenda.js"));
+  assert.ok(!html.includes("cookie-policy"));
 });
 
 test("barra contatti fissa su mobile", () => {
