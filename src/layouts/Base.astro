@@ -1,0 +1,41 @@
+---
+import { Font } from "astro:assets";
+import "../styles/global.css";
+import { SITE } from "../data/site";
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{SITE.title}</title>
+    <meta name="description" content={SITE.description} />
+    <link rel="canonical" href={SITE.url} />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="Chiara Benini" />
+    <meta name="theme-color" content="#275360" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Chiara Benini Osteopata" />
+    <meta property="og:title" content={SITE.title} />
+    <meta property="og:description" content={SITE.description} />
+    <meta property="og:url" content={SITE.url} />
+    <meta property="og:image" content={SITE.ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <Font cssVariable="--font-cormorant" preload={[{ weight: "600", style: "normal" }]} />
+    <Font cssVariable="--font-figtree" preload={[{ weight: "400" }]} />
+    <script
+      is:inline
+      src="https://embeds.iubenda.com/widgets/9aa397b6-9715-436e-8dad-43316562ee44.js"></script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

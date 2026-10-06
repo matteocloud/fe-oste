@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-petrol: #275360;
+  --color-petrol-dark: #1c3e48;
+  --color-petrol-soft: #e7eff1;
+  --color-sage: #abc19f;
+  --color-sage-deep: #6e7457;
+  --color-sage-soft: #f1f4ec;
+  --color-cream: #fbfaf7;
+  --color-ink: #1f2a37;
+  --color-muted: #52606d;
+  --color-line: rgb(31 42 55 / 0.1);
+  --shadow-soft: 0 24px 48px -28px rgb(31 42 55 / 0.35);
+}
+
+@theme inline {
+  --font-heading: var(--font-cormorant);
+  --font-sans: var(--font-figtree);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading text-ink;
+  }
+
+  ::selection {
+    background: var(--color-sage);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-petrol);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.22em] text-sage-deep uppercase;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold transition duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-petrol text-white shadow-soft hover:bg-petrol-dark;
+  }
+
+  .btn-outline {
+    @apply border border-petrol/30 text-petrol hover:border-petrol hover:bg-petrol-soft;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
