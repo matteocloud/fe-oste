@@ -11,15 +11,15 @@ import { telHref, whatsappHref } from "../lib/links";
       id="contatti-title"
       eyebrow="Prenota una visita"
       title="Dove ricevo"
-      intro="Contattami per informazioni o per fissare il tuo prossimo appuntamento. Ricevo a Varese, in due studi."
+      intro="Contattami per informazioni o per fissare il tuo prossimo appuntamento. Ricevo in tre studi, a Varese e Gazzada Schianno."
     />
 
-    <div class="grid gap-6 lg:grid-cols-3">
+    <div class="grid gap-6 lg:auto-rows-fr lg:grid-cols-2">
       {
         LOCATIONS.map((loc) => (
           <article class="flex flex-col justify-between gap-8 rounded-3xl border border-line bg-white p-7 shadow-soft">
             <div class="space-y-3">
-              <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-petrol-soft text-petrol">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-soft text-brand">
                 <MapPin class="h-5 w-5" />
               </span>
               <h3 class="text-3xl font-semibold">{loc.name}</h3>
@@ -32,7 +32,7 @@ import { telHref, whatsappHref } from "../lib/links";
         ))
       }
 
-      <aside aria-label="Contatti e orari" class="flex flex-col gap-6 rounded-3xl bg-petrol p-7 text-white">
+      <aside aria-label="Contatti e orari" class="flex flex-col gap-6 rounded-3xl bg-brand p-7 text-white">
         <ul class="space-y-4">
           <li>
             <a href={telHref()} class="flex items-center gap-3 hover:underline">
@@ -54,7 +54,7 @@ import { telHref, whatsappHref } from "../lib/links";
         </ul>
         <div class="border-t border-white/20 pt-5">
           <p class="mb-3 flex items-center gap-3 font-semibold"><Clock class="h-5 w-5" /> Orari</p>
-          <dl class="space-y-3 text-sm text-white/85">
+          <dl class="flex flex-wrap gap-x-10 gap-y-3 text-sm text-white/90">
             {
               HOURS.map((slot) => (
                 <div>

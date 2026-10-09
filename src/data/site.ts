@@ -31,7 +31,7 @@ export const SITE = {
   url: "https://chiarabeniniosteopata.it/",
   title: "Chiara Benini | Osteopata a Varese",
   description:
-    "Chiara Benini, osteopata a Varese: adulti, neonati e bambini, gravidanza e sport. Ricevo a Panorama Salute e allo Studio Synergy Fisio.",
+    "Chiara Benini, osteopata a Varese: adulti, neonati e bambini, gravidanza e sport. Ricevo a Varese e Gazzada Schianno.",
   motto: "Dalla nascita, verso un futuro in salute.",
   tagline: "Un approccio dolce e naturale per favorire l'equilibrio posturale e funzionale.",
   ogImage: "https://chiarabeniniosteopata.it/og-image.jpg"
@@ -67,6 +67,14 @@ export const LOCATIONS: Location[] = [
     postalCode: "21100",
     locality: "Varese",
     mapsUrl: mapsSearch("Via Vespucci 19, Calcinate del Pesce, 21100 Varese VA")
+  },
+  {
+    id: "studio-universo",
+    name: "Studio Universo",
+    street: "Via Leonardo Da Vinci, 10",
+    postalCode: "21045",
+    locality: "Gazzada Schianno",
+    mapsUrl: mapsSearch("Via Leonardo Da Vinci 10, 21045 Gazzada Schianno VA")
   }
 ];
 
@@ -74,7 +82,7 @@ export const formatAddress = (loc: Location) =>
   `${loc.street}${loc.area ? `, ${loc.area}` : ""} · ${loc.postalCode} ${loc.locality} (VA)`;
 
 export const HOURS = [
-  { days: "Lunedì – Venerdì", time: "09:00 – 13:00 · 14:00 – 19:00" },
+  { days: "Lunedì – Venerdì", time: "09:00 – 19:00" },
   { days: "Sabato", time: "09:00 – 13:00" }
 ];
 
@@ -159,18 +167,25 @@ export const TRAINING: TrainingStep[] = [
   },
   {
     when: "Tirocinio",
-    text: "Oltre 1000 ore di tirocinio clinico con pazienti dall'età neonatale all'età adulta, compreso il supporto agli atleti del Trofeo Master Rari Nantes – Saronno."
+    text: "Oltre 1000 ore di tirocinio clinico con pazienti dall'età neonatale all'età adulta, in ogni fase della vita, compreso il supporto agli atleti del Trofeo Master Rari Nantes – Saronno."
   },
   { when: "Corso", text: "Formazione breve in Clinica gnatologica e osteopatia." },
   { when: "Da febbraio 2025", text: "Specializzazione in ambito neonatale-pediatrico." },
-  { when: "Da ottobre 2025", text: "Specializzazione in craniodonzia." },
+  {
+    when: "Giugno 2026",
+    text: "Ho conseguito un corso di specializzazione di “Osteopatia in ambito Ortodontico”."
+  },
+  {
+    when: "Anno accademico 2026/2027",
+    text: "Ho intrapreso il ruolo di Tutor Osteopata all'interno del Centro di Formazione Tirocinio Osteopatico (CFTO) presso l'Accademia Italiana di Medicina Osteopatica (AIMO), affiancando gli studenti durante la loro pratica clinica."
+  },
   {
     when: "AIMO",
     text: "Assistente e tutor in formazione, a supporto degli studenti durante le lezioni e la pratica clinica."
   },
   {
     when: "Sport",
-    text: "Insegnante di nuoto e nuoto sincronizzato: un punto d'incontro tra sport e osteopatia."
+    text: "Insegnante di nuoto e nuoto artistico: un punto d'incontro tra sport e osteopatia."
   }
 ];
 

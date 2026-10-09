@@ -35,9 +35,11 @@ test("chi sono con il percorso di formazione", () => {
     "Mi chiamo Chiara Benini",
     "Health Sciences University di Londra",
     "1000 ore di tirocinio",
+    "in ogni fase della vita",
     "neonatale-pediatrico",
-    "craniodonzia",
-    "nuoto sincronizzato"
+    "Osteopatia in ambito Ortodontico",
+    "Tutor Osteopata",
+    "nuoto artistico"
   ]) {
     assert.ok(pageText.includes(text), text);
   }

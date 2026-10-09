@@ -35,6 +35,6 @@ test("font self-hosted, nessuna richiesta a Google Fonts", () => {
 
 test("nessun riferimento allo Studio Curas in dist", () => {
   for (const file of listFiles().filter((f) => /\.(html|xml|txt|js|css)$/.test(f))) {
-    assert.doesNotMatch(readFileSync(file, "utf8"), /curas|leonardo da vinci/i, file);
+    assert.doesNotMatch(readFileSync(file, "utf8"), /curas|leonardo da vinci,? 3\b/i, file);
   }
 });

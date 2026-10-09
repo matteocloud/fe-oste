@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-petrol: #275360;
-  --color-petrol-dark: #1c3e48;
-  --color-petrol-soft: #e7eff1;
+  --color-brand: #5c734f;
+  --color-brand-dark: #4d6143;
+  --color-brand-soft: #eff3ed;
   --color-sage: #abc19f;
   --color-sage-deep: #636a4e;
   --color-sage-soft: #f1f4ec;
@@ -42,7 +42,7 @@
   }
 
   :focus-visible {
-    outline: 3px solid var(--color-petrol);
+    outline: 3px solid var(--color-brand);
     outline-offset: 3px;
   }
 }
@@ -61,11 +61,11 @@
   }
 
   .btn-primary {
-    @apply bg-petrol text-white shadow-soft hover:bg-petrol-dark;
+    @apply bg-brand text-white shadow-soft hover:bg-brand-dark;
   }
 
   .btn-outline {
-    @apply border border-petrol/30 text-petrol hover:border-petrol hover:bg-petrol-soft;
+    @apply border border-brand/30 text-brand hover:border-brand hover:bg-brand-soft;
   }
 }
 
