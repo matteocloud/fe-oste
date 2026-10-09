@@ -1,12 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
+import loopzero from "../assets/loopzero.webp";
 import { NAV_LINKS, SITE } from "../data/site";
 
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-[darkslategrey] pt-14 pb-32 text-sm text-white/90 md:pb-14">
+<footer class="bg-[darkslategrey] pt-14 pb-28 text-sm text-white/90 md:pb-10">
   <div class="container-page space-y-10">
     <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
       <div class="flex items-start gap-4">
@@ -26,14 +27,33 @@ const year = new Date().getFullYear();
       </nav>
     </div>
 
-    <div class="flex flex-col gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row sm:justify-between">
-      <p>© {year} Chiara Benini Osteopata · Tutti i diritti riservati.</p>
+    <div class="flex flex-col gap-1 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+      <p>
+        © {year} Chiara Benini Osteopata · Tutti i diritti riservati. ·{" "}
+        <a
+          href="https://www.iubenda.com/privacy-policy/93759785"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="whitespace-nowrap underline-offset-4 hover:text-white hover:underline">Privacy Policy</a
+        >
+      </p>
+      {/* Firma di chi ha fatto il sito, come su Damatrà: piccola, in basso a destra, porta a loopzero.it. */}
       <a
-        href="https://www.iubenda.com/privacy-policy/93759785"
+        href="https://loopzero.it"
         target="_blank"
-        rel="noopener noreferrer"
-        class="underline-offset-4 hover:text-white hover:underline">Privacy Policy</a
+        rel="noopener"
+        class="group inline-flex items-baseline gap-2 self-start py-3.5 tracking-[0.06em] text-white/70 transition-colors hover:text-white sm:self-auto"
       >
+        <span>Sito realizzato da</span>
+        {/* Le lettere di "loopzero" poggiano al 78,5% dell'altezza (sotto c'è solo la gamba della p): l'immagine scende del 21,5% per allinearle alla base del testo. */}
+        <Image
+          src={loopzero}
+          alt="LoopZero"
+          width={144}
+          height={32}
+          class="relative top-[calc(16px*0.215)] h-4 w-[72px] opacity-75 transition-opacity group-hover:opacity-100"
+        />
+      </a>
     </div>
   </div>
 </footer>

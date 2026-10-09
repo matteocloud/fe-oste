@@ -27,3 +27,8 @@ test("solo il link alla privacy policy nel footer", () => {
 test("barra contatti fissa su mobile", () => {
   assert.match(html, /data-mobile-contact-bar/);
 });
+
+test("firma LoopZero nel footer", () => {
+  const footer = html.match(/<footer[\s\S]*?<\/footer>/)[0];
+  assert.match(footer, /<a href="https:\/\/loopzero\.it"[^>]*>[\s\S]*?Sito realizzato da[\s\S]*?<img[^>]*alt="LoopZero"/);
+});
