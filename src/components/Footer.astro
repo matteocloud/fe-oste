@@ -46,11 +46,14 @@ const year = new Date().getFullYear();
       >
         <span>Sito realizzato da</span>
         {/* Le lettere di "loopzero" poggiano al 78,5% dell'altezza (sotto c'è solo la gamba della p): l'immagine scende del 21,5% per allinearle alla base del testo. */}
-        <Image
-          src={loopzero}
+        {/* File originale (270×60), non ricompresso: resta nitido anche sugli schermi a densità 3x. */}
+        <img
+          src={loopzero.src}
           alt="LoopZero"
-          width={144}
-          height={32}
+          width="72"
+          height="16"
+          loading="lazy"
+          decoding="async"
           class="relative top-[calc(16px*0.215)] h-4 w-[72px] opacity-75 transition-opacity group-hover:opacity-100"
         />
       </a>
