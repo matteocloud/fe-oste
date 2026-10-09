@@ -1,0 +1,71 @@
+---
+import { Clock, Mail, MapPin, MessageCircle, Navigation, Phone } from "@lucide/astro";
+import SectionHeading from "./SectionHeading.astro";
+import { CONTACT, HOURS, LOCATIONS, formatAddress } from "../data/site";
+import { telHref, whatsappHref } from "../lib/links";
+---
+
+<section id="contatti" aria-labelledby="contatti-title" class="py-20 md:py-28">
+  <div class="container-page space-y-14">
+    <SectionHeading
+      id="contatti-title"
+      eyebrow="Prenota una visita"
+      title="Dove ricevo"
+      intro="Contattami per informazioni o per fissare il tuo prossimo appuntamento. Ricevo in tre studi, a Varese e Gazzada Schianno."
+    />
+
+    <div class="grid gap-6 lg:auto-rows-fr lg:grid-cols-2">
+      {
+        LOCATIONS.map((loc) => (
+          <article class="flex flex-col justify-between gap-8 rounded-3xl border border-line bg-white p-7 shadow-soft">
+            <div class="space-y-3">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-soft text-brand">
+                <MapPin class="h-5 w-5" />
+              </span>
+              <h3 class="text-3xl font-semibold">{loc.name}</h3>
+              <p class="text-muted">{formatAddress(loc)}</p>
+            </div>
+            <a href={loc.mapsUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline self-start">
+              <Navigation class="h-4 w-4" /> Indicazioni
+            </a>
+          </article>
+        ))
+      }
+
+      <aside aria-label="Contatti e orari" class="flex flex-col gap-6 rounded-3xl bg-brand p-7 text-white">
+        <ul class="space-y-4">
+          <li>
+            <a href={telHref()} class="flex items-center gap-3 hover:underline">
+              <Phone class="h-5 w-5 flex-none" />
+              {CONTACT.phone}
+            </a>
+          </li>
+          <li>
+            <a href={whatsappHref()} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:underline">
+              <MessageCircle class="h-5 w-5 flex-none" /> Scrivimi su WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${CONTACT.email}`} class="flex items-center gap-3 text-sm [overflow-wrap:anywhere] hover:underline sm:text-base">
+              <Mail class="h-5 w-5 flex-none" />
+              {CONTACT.email}
+            </a>
+          </li>
+        </ul>
+        <div class="border-t border-white/20 pt-5">
+          <p class="mb-3 flex items-center gap-3 font-semibold"><Clock class="h-5 w-5" /> Orari</p>
+          <dl class="flex flex-wrap gap-x-10 gap-y-3 text-sm text-white/90">
+            {
+              HOURS.map((slot) => (
+                <div>
+                  <dt class="font-semibold text-white">{slot.days}</dt>
+                  <dd>{slot.time}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

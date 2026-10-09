@@ -1,0 +1,24 @@
+---
+import { ChevronDown } from "@lucide/astro";
+import SectionHeading from "./SectionHeading.astro";
+import { FAQ } from "../data/site";
+---
+
+<section id="faq" aria-labelledby="faq-title" class="bg-white py-20 md:py-28">
+  <div class="container-page grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+    <SectionHeading id="faq-title" eyebrow="Domande frequenti" title="Prima della visita" />
+    <div class="divide-y divide-line border-y border-line">
+      {
+        FAQ.map((item) => (
+          <details class="group py-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-ink [&::-webkit-details-marker]:hidden">
+              {item.question}
+              <ChevronDown class="h-5 w-5 flex-none text-brand transition-transform duration-200 group-open:rotate-180" />
+            </summary>
+            <p class="mt-3 max-w-prose text-muted">{item.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

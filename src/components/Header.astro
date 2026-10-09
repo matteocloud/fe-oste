@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import { Menu, X } from "@lucide/astro";
+import logo from "../assets/logo-cb.png";
+import { NAV_LINKS } from "../data/site";
+---
+
+<header class="sticky top-0 z-40 border-b border-line bg-cream/90 backdrop-blur-md">
+  <div class="container-page flex h-20 items-center justify-between gap-4 nav:h-24">
+    <a href="#inizio" class="flex items-center gap-3 nav:gap-4">
+      <Image src={logo} alt="" width={143} height={96} loading="eager" class="h-10 w-auto nav:h-12" />
+      <span class="leading-tight">
+        <span class="block font-heading text-2xl font-semibold text-ink nav:text-[1.75rem]">Chiara Benini</span>
+        <span class="block text-xs font-semibold tracking-[0.22em] text-sage-deep uppercase">Osteopata</span>
+      </span>
+    </a>
+
+    <nav aria-label="Navigazione principale" class="hidden items-center gap-8 text-base font-medium text-muted nav:flex">
+      {NAV_LINKS.map((link) => <a href={link.href} class="transition-colors hover:text-brand">{link.label}</a>)}
+      <a href="#contatti" class="btn btn-primary px-6 py-2.5">Prenota</a>
+    </nav>
+
+    <button
+      type="button"
+      class="rounded-full border border-line p-2 text-ink nav:hidden"
+      aria-controls="mobile-nav"
+      aria-expanded="false"
+      aria-label="Apri il menu"
+      data-menu-toggle
+    >
+      <span data-icon-open><Menu class="h-6 w-6" /></span>
+      <span data-icon-close class="hidden"><X class="h-6 w-6" /></span>
+    </button>
+  </div>
+
+  <nav id="mobile-nav" aria-label="Navigazione mobile" class="hidden border-t border-line bg-cream nav:hidden" data-menu>
+    <ul class="container-page py-2 text-lg">
+      {
+        NAV_LINKS.map((link) => (
+          <li class="border-b border-line last:border-0">
+            <a href={link.href} class="block py-4" data-menu-link>
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const menu = document.querySelector<HTMLElement>("[data-menu]");
+
+  if (toggle && menu) {
+    const setOpen = (open: boolean) => {
+      menu.classList.toggle("hidden", !open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Chiudi il menu" : "Apri il menu");
+      toggle.querySelector("[data-icon-open]")?.classList.toggle("hidden", open);
+      toggle.querySelector("[data-icon-close]")?.classList.toggle("hidden", !open);
+    };
+
+    toggle.addEventListener("click", () => setOpen(menu.classList.contains("hidden")));
+    menu.querySelectorAll("[data-menu-link]").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+  }
+</script>

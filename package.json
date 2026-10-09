@@ -1,31 +1,26 @@
 {
   "name": "cb-osteopata-vetrina",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "homepage": "https://chiarabeniniosteopata.it",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build && echo chiarabeniniosteopata.it > dist/CNAME",
-    "deploy": "gh-pages -d dist -m \"deploy $(date)\""
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "astro build && node --test \"tests/*.test.mjs\"",
+    "images": "node scripts/make-images.mjs"
   },
   "dependencies": {
-    "lucide-react": "^0.319.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@lucide/astro": "^1.52.0",
+    "astro": "^7.3.6"
   },
   "devDependencies": {
-    "@types/node": "^20.11.19",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.17",
-    "gh-pages": "^6.0.0",
-    "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3",
-    "vite": "^5.1.4"
+    "@tailwindcss/vite": "^4.3.3",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3"
   }
 }

@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+import { NAV_LINKS, SITE } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[darkslategrey] pt-14 pb-32 text-sm text-white/90 md:pb-14">
+  <div class="container-page space-y-10">
+    <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+      <div class="flex items-start gap-4">
+        <span class="flex h-14 w-14 flex-none items-center justify-center rounded-full bg-white">
+          <Image src={logo} alt="" width={88} height={88} class="h-11 w-11" />
+        </span>
+        <div class="space-y-1">
+          <p class="font-heading text-2xl font-semibold text-white">Chiara Benini</p>
+          <p>Osteopata a Varese</p>
+          <p class="max-w-xs pt-2">{SITE.tagline}</p>
+        </div>
+      </div>
+      <nav aria-label="Navigazione nel footer">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2">
+          {NAV_LINKS.map((link) => <li><a href={link.href} class="hover:text-white">{link.label}</a></li>)}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="flex flex-col gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row sm:justify-between">
+      <p>© {year} Chiara Benini Osteopata · Tutti i diritti riservati.</p>
+      <a
+        href="https://www.iubenda.com/privacy-policy/93759785"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline-offset-4 hover:text-white hover:underline">Privacy Policy</a
+      >
+    </div>
+  </div>
+</footer>
