@@ -199,7 +199,7 @@ export const FAQ: FaqItem[] = [
   {
     question: "Quanto dura una seduta?",
     answer:
-      "La prima visita dura circa un'ora e comprende colloquio, valutazione e trattamento. Le sedute successive sono un po' più brevi."
+      "La prima visita dura circa un'ora e comprende colloquio, valutazione e trattamento. I trattamenti successivi durano circa 45 minuti."
   },
   {
     question: "Cosa devo portare alla prima visita?",
@@ -209,6 +209,6 @@ export const FAQ: FaqItem[] = [
   {
     question: "Tratti anche neonati e bambini?",
     answer:
-      "Sì. Mi occupo di osteopatia neonatale e pediatrica, ambito in cui mi sto specializzando dal 2025: rigurgiti, coliche, difficoltà nella suzione, plagiocefalia e supporto alla crescita."
+      "Sì. Mi occupo anche di osteopatia neonatale e pediatrica, ambito in cui mi sto specializzando dal 2025."
   }
 ];
