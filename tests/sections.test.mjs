@@ -36,13 +36,17 @@ test("chi sono con il percorso di formazione", () => {
     "Health Sciences University di Londra",
     "1000 ore di tirocinio",
     "in ogni fase della vita",
+    "CFTO Saronno",
+    "Corsi di specializzazione",
     "neonatale-pediatrico",
+    "Clinica gnatologica e osteopatia",
     "Osteopatia in ambito Ortodontico",
     "Tutor Osteopata",
     "nuoto artistico"
   ]) {
     assert.ok(pageText.includes(text), text);
   }
+  assert.ok(!pageText.includes("Assistente e tutor in formazione"));
 });
 
 test("FAQ con 4 domande a fisarmonica", () => {

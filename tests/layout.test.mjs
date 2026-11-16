@@ -24,6 +24,11 @@ test("solo il link alla privacy policy nel footer", () => {
   assert.ok(!html.includes("cookie-policy"));
 });
 
+test("partita IVA nel footer", () => {
+  const footer = html.match(/<footer[\s\S]*?<\/footer>/)[0];
+  assert.match(footer, /P\.IVA 04102040120/);
+});
+
 test("barra contatti fissa su mobile", () => {
   assert.match(html, /data-mobile-contact-bar/);
 });

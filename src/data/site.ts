@@ -20,7 +20,9 @@ export type Location = {
   mapsUrl: string;
 };
 
-export type TrainingStep = { when: string; text: string };
+export type TrainingItem = { when: string; text: string };
+
+export type TrainingStep = { when: string; text?: string; items?: TrainingItem[] };
 
 export type FaqItem = { question: string; answer: string };
 
@@ -42,6 +44,9 @@ export const CONTACT = {
   email: "chiarabenini.osteopata@gmail.com",
   whatsappMessage: "Ciao! Vorrei prenotare una visita. Sono [Nome]."
 };
+
+// La partita IVA va indicata nella home page del sito (art. 35 DPR 633/1972).
+export const VAT_ID = "04102040120";
 
 export const NAV_LINKS = [
   { label: "Trattamenti", href: "#trattamenti" },
@@ -163,29 +168,27 @@ export const ABOUT = {
 export const TRAINING: TrainingStep[] = [
   {
     when: "Formazione",
-    text: "Bachelor in Osteopathic Science e Master in Osteopathic Medicine presso l'Accademia Italiana di Medicina Osteopatica (AIMO) di Saronno, in collaborazione con la Health Sciences University di Londra: titoli riconosciuti a livello internazionale."
+    text: "Bachelor in Osteopathic Science (A.A. 2022-2023) e Master in Osteopathic Medicine (A.A. 2024-2025) presso l'Accademia Italiana di Medicina Osteopatica (AIMO) di Saronno, in collaborazione con la Health Sciences University di Londra, la quale permette di avere titoli riconosciuti a livello internazionale."
   },
   {
     when: "Tirocinio",
-    text: "Oltre 1000 ore di tirocinio clinico con pazienti dall'età neonatale all'età adulta, in ogni fase della vita, compreso il supporto agli atleti del Trofeo Master Rari Nantes – Saronno."
-  },
-  { when: "Corso", text: "Formazione breve in Clinica gnatologica e osteopatia." },
-  { when: "Da febbraio 2025", text: "Specializzazione in ambito neonatale-pediatrico." },
-  {
-    when: "Giugno 2026",
-    text: "Ho conseguito un corso di specializzazione di “Osteopatia in ambito Ortodontico”."
+    text: "Oltre 1000 ore di tirocinio clinico con pazienti dall'età neonatale all'età adulta, in ogni fase della vita presso il CFTO Saronno, compreso il supporto agli atleti del Trofeo Master Rari Nantes – Saronno."
   },
   {
-    when: "Anno accademico 2026/2027",
-    text: "Ho intrapreso il ruolo di Tutor Osteopata all'interno del Centro di Formazione Tirocinio Osteopatico (CFTO) presso l'Accademia Italiana di Medicina Osteopatica (AIMO), affiancando gli studenti durante la loro pratica clinica."
+    when: "Corsi di specializzazione",
+    items: [
+      { when: "Da febbraio 2025", text: "Corso in ambito neonatale-pediatrico" },
+      { when: "Maggio 2025", text: "Corso in “Clinica gnatologica e osteopatia”" },
+      { when: "Giugno 2026", text: "Corso in “Osteopatia in ambito Ortodontico”" }
+    ]
   },
   {
-    when: "AIMO",
-    text: "Assistente e tutor in formazione, a supporto degli studenti durante le lezioni e la pratica clinica."
+    when: "Lavoro",
+    text: "Oltre a svolgere la mia pratica clinica come Osteopata, ho intrapreso il ruolo di Tutor Osteopata all'interno del Centro di Formazione Tirocinio Osteopatico (CFTO) presso l'Accademia Italiana di Medicina Osteopatica (AIMO), affiancando gli studenti durante la loro pratica clinica."
   },
   {
     when: "Sport",
-    text: "Insegnante di nuoto e nuoto artistico: un punto d'incontro tra sport e osteopatia."
+    text: "Parallelamente al lavoro di Osteopata, sono insegnante di nuoto e nuoto artistico: un punto d'incontro tra sport e osteopatia."
   }
 ];
 

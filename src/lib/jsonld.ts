@@ -1,4 +1,4 @@
-import { CONTACT, LOCATIONS, SITE } from "../data/site";
+import { CONTACT, LOCATIONS, SITE, VAT_ID } from "../data/site";
 
 export const buildJsonLd = () => {
   const businesses = LOCATIONS.map((loc) => ({
@@ -39,6 +39,7 @@ export const buildJsonLd = () => {
         image: SITE.ogImage,
         telephone: CONTACT.phone,
         email: CONTACT.email,
+        vatID: `IT${VAT_ID}`,
         alumniOf: {
           "@type": "EducationalOrganization",
           name: "Accademia Italiana di Medicina Osteopatica (AIMO)"
