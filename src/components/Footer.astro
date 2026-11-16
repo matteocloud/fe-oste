@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
 import loopzero from "../assets/loopzero.webp";
-import { NAV_LINKS, SITE } from "../data/site";
+import { NAV_LINKS, SITE, VAT_ID } from "../data/site";
 
 const year = new Date().getFullYear();
 ---
@@ -29,7 +29,7 @@ const year = new Date().getFullYear();
 
     <div class="flex flex-col gap-1 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
       <p>
-        © {year} Chiara Benini Osteopata · Tutti i diritti riservati. ·{" "}
+        © {year} Chiara Benini Osteopata · <span class="whitespace-nowrap">P.IVA {VAT_ID}</span> · Tutti i diritti riservati. ·{" "}
         <a
           href="https://www.iubenda.com/privacy-policy/93759785"
           target="_blank"

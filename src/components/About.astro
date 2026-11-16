@@ -34,7 +34,17 @@ import { ABOUT, TRAINING } from "../data/site";
                   class="absolute top-1.5 -left-[1.95rem] h-3 w-3 rounded-full border-2 border-cream bg-brand"
                 />
                 <p class="text-xs font-semibold tracking-[0.18em] text-sage-deep uppercase">{step.when}</p>
-                <p class="mt-1 text-ink">{step.text}</p>
+                {step.text && <p class="mt-1 text-ink">{step.text}</p>}
+                {step.items && (
+                  <ul class="mt-2 space-y-2">
+                    {step.items.map((item) => (
+                      <li class="sm:grid sm:grid-cols-[9.5rem_1fr] sm:gap-4">
+                        <span class="block text-sm font-medium text-brand sm:pt-0.5">{item.when}</span>
+                        <span class="block text-ink">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))
           }
